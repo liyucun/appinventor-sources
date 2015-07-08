@@ -151,6 +151,9 @@ public class Form extends Activity
   // AppInventor lifecycle: listeners for the Initialize Event
   private final Set<OnInitializeListener> onInitializeListeners = Sets.newHashSet();
 
+  private final Set<OnCreateOptionsMenuListener> onCreateOptionsMenuListeners = Sets.newHashSet();
+  private final Set<OnPrepareOptionsMenuListener> onPrepareOptionsMenuListeners = Sets.newHashSet();
+
   // Set to the optional String-valued Extra passed in via an Intent on startup.
   // This is passed directly in the Repl.
   protected String startupValue = "";
@@ -1427,7 +1430,35 @@ public class Form extends Activity
     // Comment out the next line if we don't want the exit button
     addExitButtonToMenu(menu);
     addAboutInfoToMenu(menu);
+
+    for (OnCreateOptionsMenuListener onCreateOptionsMenuListener : onCreateOptionsMenuListeners) {
+      onCreateOptionsMenuListener.onCreateOptionsMenu(menu);
+    }
+
     return true;
+  }
+
+  public void registerForOnCreateOptionsMenu(OnCreateOptionsMenuListener component) {
+    onCreateOptionsMenuListeners.add(component);
+  }
+
+  @Override
+  public boolean onPrepareOptionsMenu(Menu menu) {
+    menu.clear();
+    super.onPrepareOptionsMenu(menu);
+
+    addExitButtonToMenu(menu);
+    addAboutInfoToMenu(menu);
+
+    for (OnPrepareOptionsMenuListener onPrepareOptionsMenuListener : onPrepareOptionsMenuListeners) {
+      onPrepareOptionsMenuListener.onPrepareOptionsMenu(menu);
+    }
+
+    return true;
+  }
+
+  public void registerForOnPrepareOptionsMenu(OnPrepareOptionsMenuListener component) {
+    onPrepareOptionsMenuListeners.add(component);
   }
 
   public void addExitButtonToMenu(Menu menu) {
@@ -1495,6 +1526,10 @@ public class Form extends Activity
   // This is called from clear-current-form in runtime.scm.
   public void clear() {
     viewLayout.getLayoutManager().removeAllViews();
+
+    onCreateOptionsMenuListeners.clear();
+    onPrepareOptionsMenuListeners.clear();
+
     // Set all screen properties to default values.
     defaultPropertyValues();
     screenInitialized = false;

@@ -491,4 +491,6 @@ public interface Images extends Resources {
   @Source("com/google/appinventor/images/proximitysensor.png")
   ImageResource proximitysensor();
 
+  @Source("com/google/appinventor/images/optionsMenuItem.png")
+  ImageResource optionsMenuItem();
 }

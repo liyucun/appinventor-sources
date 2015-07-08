@@ -4096,6 +4096,10 @@ public interface OdeMessages extends Messages {
   @Description("")
   String ShakingEvents();
 
+  @DefaultMessage("MenuItemClick")
+  @Description("")
+  String MenuItemClickEvents();
+
   //Methods
   @DefaultMessage("ResolveActivity")
   @Description("")
