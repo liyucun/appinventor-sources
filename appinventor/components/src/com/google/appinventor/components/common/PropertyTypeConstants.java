@@ -191,4 +191,6 @@ public class PropertyTypeConstants {
    */
   public static final String PROPERTY_TYPE_TEXT_TO_SPEECH_LANGUAGES = "languages";
 
+  public static final String PROPERTY_TYPE_MENU_ICON = "menu_icon";
+  
 }
