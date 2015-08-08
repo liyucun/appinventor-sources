@@ -151,6 +151,8 @@ public class Form extends Activity
   // AppInventor lifecycle: listeners for the Initialize Event
   private final Set<OnInitializeListener> onInitializeListeners = Sets.newHashSet();
 
+  private OnPrepareOptionsMenuListener onPrepareOptionsMenuListener;
+
   // Set to the optional String-valued Extra passed in via an Intent on startup.
   // This is passed directly in the Repl.
   protected String startupValue = "";
@@ -524,7 +526,7 @@ public class Form extends Activity
             onInitializeListener.onInitialize();
           }
           if (activeForm instanceof ReplForm) { // We are the Companion
-            ((ReplForm)activeForm).HandleReturnValues();
+            ((ReplForm) activeForm).HandleReturnValues();
           }
         } else {
           // Try again later.
@@ -572,8 +574,8 @@ public class Form extends Activity
     String componentType = component.getClass().getName();
     componentType = componentType.substring(componentType.lastIndexOf(".") + 1);
     Log.e(LOG_TAG, "Form " + formName + " ErrorOccurred, errorNumber = " + errorNumber +
-        ", componentType = " + componentType + ", functionName = " + functionName +
-        ", messages = " + message);
+            ", componentType = " + componentType + ", functionName = " + functionName +
+            ", messages = " + message);
     if ((!(EventDispatcher.dispatchEvent(
         this, "ErrorOccurred", component, functionName, errorNumber, message)))
         && screenInitialized)  {
@@ -1427,7 +1429,21 @@ public class Form extends Activity
     // Comment out the next line if we don't want the exit button
     addExitButtonToMenu(menu);
     addAboutInfoToMenu(menu);
+
     return true;
+  }
+
+  @Override
+  public boolean onPrepareOptionsMenu(Menu menu) {
+    menu.clear();
+
+    onPrepareOptionsMenuListener.onPrepareOptionsMenu(menu);
+
+    return true;
+  }
+
+  public void registerForOnPrepareOptionsMenu(OnPrepareOptionsMenuListener component) {
+    onPrepareOptionsMenuListener = component;
   }
 
   public void addExitButtonToMenu(Menu menu) {
