@@ -1437,7 +1437,9 @@ public class Form extends Activity
   public boolean onPrepareOptionsMenu(Menu menu) {
     menu.clear();
 
-    onPrepareOptionsMenuListener.onPrepareOptionsMenu(menu);
+    if(onPrepareOptionsMenuListener != null) {
+      onPrepareOptionsMenuListener.onPrepareOptionsMenu(menu);
+    }
 
     return true;
   }
@@ -1514,6 +1516,8 @@ public class Form extends Activity
     // Set all screen properties to default values.
     defaultPropertyValues();
     screenInitialized = false;
+
+    onPrepareOptionsMenuListener = null
   }
 
   public void deleteComponent(Object component) {
