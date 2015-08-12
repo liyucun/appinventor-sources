@@ -10,6 +10,8 @@ import com.google.appinventor.components.annotations.SimpleEvent;
 import com.google.appinventor.components.common.ComponentCategory;
 import com.google.appinventor.components.common.PropertyTypeConstants;
 import com.google.appinventor.components.common.YaVersion;
+import com.google.appinventor.components.runtime.util.ElementsUtil;
+import com.google.appinventor.components.runtime.util.YailList;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,21 +24,31 @@ import android.view.MenuItem;
 @SimpleObject
 public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPrepareOptionsMenuListener {
 
-    private static String titles = "";
-
     private String selection = "";
+
+    private YailList items;
 
     public SimpleMenu (ComponentContainer container) {
         super(container.$form());
         form.registerForOnPrepareOptionsMenu(this);
     }
 
-    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_STRING,
-            defaultValue = "")
-    @SimpleProperty
-    public void Title(String title) {
-        this.titles = title;
+    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_STRING, defaultValue = "")
+    @SimpleProperty(description="",  category = PropertyCategory.BEHAVIOR)
+    public void ElementsFromString(String itemstring) {
+        items = ElementsUtil.elementsFromString(itemstring);
     }
+
+    @SimpleProperty(description="", category = PropertyCategory.BEHAVIOR)
+    public void Elements(YailList itemsList) {
+        items = ElementsUtil.elements(itemsList, "SimpleMenu");
+    }
+
+    @SimpleProperty(category = PropertyCategory.BEHAVIOR)
+    public YailList Elements() {
+        return items;
+    }
+
 
     @SimpleProperty
     public String Selection() {
@@ -45,8 +57,10 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
 
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
-        for(final String title : titles.split(",")) {
-            MenuItem menuItem = menu.add(Menu.NONE, Menu.NONE, Menu.NONE, title);
+        int size = items.size();
+        for (int i = 1; i <= size; i++) {
+            String itemString = YailList.YailListElementToString(items.get(i));
+            MenuItem menuItem = menu.add(Menu.NONE, Menu.NONE, Menu.NONE, itemString);
 
             menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                 @Override
@@ -58,7 +72,6 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
                     return true;
                 }
             });
-
         }
     }
 
