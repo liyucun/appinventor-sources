@@ -1517,7 +1517,7 @@ public class Form extends Activity
     defaultPropertyValues();
     screenInitialized = false;
 
-    onPrepareOptionsMenuListener = null
+    onPrepareOptionsMenuListener = null;
   }
 
   public void deleteComponent(Object component) {
