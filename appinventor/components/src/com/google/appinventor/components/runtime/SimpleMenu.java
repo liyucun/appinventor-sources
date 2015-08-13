@@ -15,6 +15,8 @@ import com.google.appinventor.components.runtime.util.YailList;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.text.SpannableString;
+import android.text.Html;
 
 @DesignerComponent(version = YaVersion.SIMPLEMENU_COMPONENT_VERSION,
         category = ComponentCategory.USERINTERFACE,
@@ -60,14 +62,14 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
         int size = items.size();
         for (int i = 1; i <= size; i++) {
             String itemString = YailList.YailListElementToString(items.get(i));
-            MenuItem menuItem = menu.add(Menu.NONE, Menu.NONE, Menu.NONE, itemString);
+            MenuItem menuItem = menu.add(Menu.NONE, Menu.NONE, Menu.NONE, stringToHTML(itemString));
 
             menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
 
-                    SimpleMenu.this.selection = (String) item.getTitle();
-                    SimpleMenu.this.AfterSelecting((String) item.getTitle());
+                    SimpleMenu.this.selection = item.getTitle().toString();
+                    SimpleMenu.this.AfterSelecting(item.getTitle().toString());
 
                     return true;
                 }
@@ -80,4 +82,7 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
         EventDispatcher.dispatchEvent(this, "AfterSelecting", selection);
     }
 
+    private static SpannableString stringToHTML(String message) {
+        return new SpannableString(Html.fromHtml(message));
+    }
 }
