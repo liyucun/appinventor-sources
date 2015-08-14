@@ -33,6 +33,8 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
     public SimpleMenu (ComponentContainer container) {
         super(container.$form());
         form.registerForOnPrepareOptionsMenu(this);
+
+        items = YailList.makeEmptyList();
     }
 
     @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_STRING, defaultValue = "")
@@ -51,7 +53,6 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
         return items;
     }
 
-
     @SimpleProperty
     public String Selection() {
         return selection;
@@ -59,21 +60,24 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
 
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
-        int size = items.size();
-        for (int i = 1; i <= size; i++) {
-            String itemString = YailList.YailListElementToString(items.get(i));
-            MenuItem menuItem = menu.add(Menu.NONE, Menu.NONE, Menu.NONE, stringToHTML(itemString));
+        if(!items.isEmpty()){
+            int size = items.size();
 
-            menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem item) {
+            for (int i = 1; i <= size; i++) {
+                String itemString = YailList.YailListElementToString(items.get(i));
+                MenuItem menuItem = menu.add(Menu.NONE, Menu.NONE, Menu.NONE, stringToHTML(itemString));
 
-                    SimpleMenu.this.selection = item.getTitle().toString();
-                    SimpleMenu.this.AfterSelecting(item.getTitle().toString());
+                menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
 
-                    return true;
-                }
-            });
+                        SimpleMenu.this.selection = item.getTitle().toString();
+                        SimpleMenu.this.AfterSelecting(item.getTitle().toString());
+
+                        return true;
+                    }
+                });
+            }
         }
     }
 
