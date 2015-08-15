@@ -32,6 +32,7 @@ import com.google.appinventor.client.editor.youngandroid.properties.YoungAndroid
 import com.google.appinventor.client.editor.youngandroid.properties.YoungAndroidToastLengthChoicePropertyEditor;
 import com.google.appinventor.client.editor.youngandroid.properties.YoungAndroidVerticalAlignmentChoicePropertyEditor;
 import com.google.appinventor.client.editor.youngandroid.properties.YoungAndroidTextReceivingPropertyEditor;
+import com.google.appinventor.client.editor.youngandroid.properties.YoungAndroidSimpleMenuItemIconChoicePropertyEditor;
 import com.google.appinventor.client.widgets.properties.CountryChoicePropertyEditor;
 import com.google.appinventor.client.widgets.properties.FloatPropertyEditor;
 import com.google.appinventor.client.widgets.properties.IntegerPropertyEditor;
@@ -218,6 +219,8 @@ public class YoungAndroidPalettePanel extends Composite implements SimplePalette
       return new CountryChoicePropertyEditor();
     } else if (editorType.equals(PropertyTypeConstants.PROPERTY_TYPE_TEXT_TO_SPEECH_LANGUAGES)) {
       return new LanguageChoicePropertyEditor();
+    } else if (editorType.equals(PropertyTypeConstants.PROPERTY_TYPE_SIMPLE_MENU_ICON)) {
+      return new YoungAndroidSimpleMenuItemIconChoicePropertyEditor();
     } else {
       return new TextPropertyEditor();
     }
