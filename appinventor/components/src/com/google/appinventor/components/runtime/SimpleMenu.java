@@ -117,32 +117,32 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
     }
 
 
-    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_SIMPLE_MENU_ICON,
-            defaultValue = Component.MENU_NO_ICON + "")
+    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_NON_NEGATIVE_INTEGER,
+            defaultValue = "0")
     @SimpleProperty(description="",  category = PropertyCategory.BEHAVIOR)
     public void Icon1(int icon) {
-        chooseIcon(icon, menu_item1_icon);
+        //chooseIcon(icon, menu_item1_icon);
     }
 
-    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_SIMPLE_MENU_ICON,
-            defaultValue = Component.MENU_NO_ICON + "")
+    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_NON_NEGATIVE_INTEGER,
+            defaultValue = "0")
     @SimpleProperty(description="",  category = PropertyCategory.BEHAVIOR)
     public void Icon2(int icon) {
-        chooseIcon(icon, menu_item2_icon);
+        //chooseIcon(icon, menu_item2_icon);
     }
 
-    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_SIMPLE_MENU_ICON,
-            defaultValue = Component.MENU_NO_ICON + "")
+    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_NON_NEGATIVE_INTEGER,
+            defaultValue = "0")
     @SimpleProperty(description="",  category = PropertyCategory.BEHAVIOR)
     public void Icon3(int icon) {
-        chooseIcon(icon, menu_item3_icon);
+        //chooseIcon(icon, menu_item3_icon);
     }
 
-    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_SIMPLE_MENU_ICON,
-            defaultValue = Component.MENU_NO_ICON + "")
+    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_NON_NEGATIVE_INTEGER,
+            defaultValue = "0")
     @SimpleProperty(description="",  category = PropertyCategory.BEHAVIOR)
     public void Icon4(int icon) {
-        chooseIcon(icon, menu_item4_icon);
+        //chooseIcon(icon, menu_item4_icon);
     }
 
     class MenuItemIcon {
