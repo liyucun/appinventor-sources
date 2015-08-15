@@ -5659,11 +5659,4 @@ public interface OdeMessages extends Messages {
   @Description("")
   String Icon4Properties();
 
-  @DefaultMessage("icon5")
-  @Description("")
-  String Icon5Properties();
-
-  @DefaultMessage("icon6")
-  @Description("")
-  String Icon6Properties();
 }

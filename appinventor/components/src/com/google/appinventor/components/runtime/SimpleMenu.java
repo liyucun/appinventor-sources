@@ -34,8 +34,6 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
     private MenuItemIcon menu_item2_icon;
     private MenuItemIcon menu_item3_icon;
     private MenuItemIcon menu_item4_icon;
-    private MenuItemIcon menu_item5_icon;
-    private MenuItemIcon menu_item6_icon;
 
     public SimpleMenu (ComponentContainer container) {
         super(container.$form());
@@ -47,8 +45,6 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
         menu_item2_icon = new MenuItemIcon(Component.MENU_NO_ICON);
         menu_item3_icon = new MenuItemIcon(Component.MENU_NO_ICON);
         menu_item4_icon = new MenuItemIcon(Component.MENU_NO_ICON);
-        menu_item5_icon = new MenuItemIcon(Component.MENU_NO_ICON);
-        menu_item6_icon = new MenuItemIcon(Component.MENU_NO_ICON);
     }
 
     @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_STRING, defaultValue = "")
@@ -93,12 +89,6 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
                         break;
                     case 4:
                         menuItem.setIcon(menu_item4_icon.getIconValue());
-                        break;
-                    case 5:
-                        menuItem.setIcon(menu_item5_icon.getIconValue());
-                        break;
-                    case 6:
-                        menuItem.setIcon(menu_item6_icon.getIconValue());
                         break;
 
                 }
@@ -153,20 +143,6 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
     @SimpleProperty(description="",  category = PropertyCategory.BEHAVIOR)
     public void Icon4(int icon) {
         chooseIcon(icon, menu_item4_icon);
-    }
-
-    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_SIMPLE_MENU_ICON,
-            defaultValue = Component.MENU_NO_ICON + "")
-    @SimpleProperty(description="",  category = PropertyCategory.BEHAVIOR)
-    public void Icon5(int icon) {
-        chooseIcon(icon, menu_item5_icon);
-    }
-
-    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_SIMPLE_MENU_ICON,
-            defaultValue = Component.MENU_NO_ICON + "")
-    @SimpleProperty(description="",  category = PropertyCategory.BEHAVIOR)
-    public void Icon6(int icon) {
-        chooseIcon(icon, menu_item6_icon);
     }
 
     class MenuItemIcon {

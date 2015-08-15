@@ -1425,10 +1425,6 @@ public class Form extends Activity
     // This procedure is called only once.  To change the items dynamically
     // we would use onPrepareOptionsMenu.
     super.onCreateOptionsMenu(menu);
-    // add the menu items
-    // Comment out the next line if we don't want the exit button
-    addExitButtonToMenu(menu);
-    addAboutInfoToMenu(menu);
 
     return true;
   }
@@ -1436,6 +1432,11 @@ public class Form extends Activity
   @Override
   public boolean onPrepareOptionsMenu(Menu menu) {
     menu.clear();
+
+    // add the menu items
+    // Comment out the next line if we don't want the exit button
+    addExitButtonToMenu(menu);
+    addAboutInfoToMenu(menu);
 
     if(onPrepareOptionsMenuListener != null) {
       onPrepareOptionsMenuListener.onPrepareOptionsMenu(menu);
