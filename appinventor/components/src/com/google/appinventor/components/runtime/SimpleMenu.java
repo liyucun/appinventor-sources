@@ -24,7 +24,7 @@ import android.text.Html;
         nonVisible = true,
         iconName = "images/simpleMenu.png")
 @SimpleObject
-public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPrepareOptionsMenuListener, Component {
+public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPrepareOptionsMenuListener {
 
     private String selection = "";
 
@@ -35,16 +35,18 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
     private MenuItemIcon menu_item3_icon;
     private MenuItemIcon menu_item4_icon;
 
+    private final static int NO_MENU_ICON = 0;
+
     public SimpleMenu (ComponentContainer container) {
         super(container.$form());
         form.registerForOnPrepareOptionsMenu(this);
 
         items = YailList.makeEmptyList();
 
-        menu_item1_icon = new MenuItemIcon(Component.MENU_NO_ICON);
-        menu_item2_icon = new MenuItemIcon(Component.MENU_NO_ICON);
-        menu_item3_icon = new MenuItemIcon(Component.MENU_NO_ICON);
-        menu_item4_icon = new MenuItemIcon(Component.MENU_NO_ICON);
+        menu_item1_icon = new MenuItemIcon(NO_MENU_ICON);
+        menu_item2_icon = new MenuItemIcon(NO_MENU_ICON);
+        menu_item3_icon = new MenuItemIcon(NO_MENU_ICON);
+        menu_item4_icon = new MenuItemIcon(NO_MENU_ICON);
     }
 
     @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_STRING, defaultValue = "")
@@ -121,28 +123,28 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
             defaultValue = "0")
     @SimpleProperty(description="",  category = PropertyCategory.BEHAVIOR)
     public void Icon1(int icon) {
-        //chooseIcon(icon, menu_item1_icon);
+        chooseIcon(icon, menu_item1_icon);
     }
 
     @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_NON_NEGATIVE_INTEGER,
             defaultValue = "0")
     @SimpleProperty(description="",  category = PropertyCategory.BEHAVIOR)
     public void Icon2(int icon) {
-        //chooseIcon(icon, menu_item2_icon);
+        chooseIcon(icon, menu_item2_icon);
     }
 
     @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_NON_NEGATIVE_INTEGER,
             defaultValue = "0")
     @SimpleProperty(description="",  category = PropertyCategory.BEHAVIOR)
     public void Icon3(int icon) {
-        //chooseIcon(icon, menu_item3_icon);
+        chooseIcon(icon, menu_item3_icon);
     }
 
     @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_NON_NEGATIVE_INTEGER,
             defaultValue = "0")
     @SimpleProperty(description="",  category = PropertyCategory.BEHAVIOR)
     public void Icon4(int icon) {
-        //chooseIcon(icon, menu_item4_icon);
+        chooseIcon(icon, menu_item4_icon);
     }
 
     class MenuItemIcon {
@@ -165,130 +167,289 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
     private void chooseIcon(int icon, MenuItemIcon menuItemIcon) {
 
         switch (icon) {
-            case Component.MENU_NO_ICON:
-                menuItemIcon.setIconValue(0);
+            case NO_MENU_ICON:
+                menuItemIcon.setIconValue(NO_MENU_ICON);
                 break;
-            case Component.MENU_ADD:
+            case 1:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_account_list);
+                break;
+            case 2:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_add);
                 break;
-            case Component.MENU_AGENDA:
+            case 3:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_agenda);
                 break;
-            case Component.MENU_ALWAYS_LANDSCAPE_PORTRAIT:
+            case 4:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_allfriends);
+                break;
+            case 5:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_always_landscape_portrait);
                 break;
-            case Component.MENU_CALL:
+            case 6:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_archive);
+                break;
+            case 7:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_attachment);
+                break;
+            case 8:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_back);
+                break;
+            case 9:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_block);
+                break;
+            case 10:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_blocked_user);
+                break;
+            case 11:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_btn_add);
+                break;
+            case 12:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_call);
                 break;
-            case Component.MENU_CAMERA:
+            case 13:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_camera);
                 break;
-            case Component.MENU_CLOSE_CLEAR_CANCEL:
+            case 14:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_cc);
+                break;
+            case 15:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_chat_dashboard);
+                break;
+            case 16:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_clear_playlist);
+                break;
+            case 17:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_close_clear_cancel);
                 break;
-            case Component.MENU_COMPASS:
+            case 18:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_compass);
                 break;
-            case Component.MENU_CROP:
+            case 19:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_compose);
+                break;
+            case 20:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_copy_holo_dark);
+                break;
+            case 21:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_copy_holo_light);
+                break;
+            case 22:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_copy);
+                break;
+            case 23:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_crop);
                 break;
-            case Component.MENU_DAY:
+            case 24:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_cut_holo_dark);
+                break;
+            case 25:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_cut_holo_light);
+                break;
+            case 26:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_cut);
+                break;
+            case 27:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_day);
                 break;
-            case Component.MENU_DELETE:
+            case 28:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_delete);
                 break;
-            case Component.MENU_DIRECTIONS:
+            case 29:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_directions);
                 break;
-            case Component.MENU_EDIT:
+            case 30:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_edit);
                 break;
-            case Component.MENU_GALLERY:
+            case 31:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_emoticons);
+                break;
+            case 32:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_end_conversation);
+                break;
+            case 33:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_find_holo_dark);
+                break;
+            case 34:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_find_holo_light);
+                break;
+            case 35:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_find);
+                break;
+            case 36:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_forward);
+                break;
+            case 37:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_friendslist);
+                break;
+            case 38:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_gallery);
                 break;
-            case Component.MENU_HELP:
+            case 39:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_goto);
+                break;
+            case 40:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_help_holo_light);
+                break;
+            case 41:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_help);
                 break;
-            case Component.MENU_INFO_DETAILS:
+            case 42:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_home);
+                break;
+            case 43:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_info_details);
                 break;
-            case Component.MENU_MANAGE:
+            case 44:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_invite);
+                break;
+            case 45:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_login);
+                break;
+            case 46:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_manage);
                 break;
-            case Component.MENU_MAPMODE:
+            case 47:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_mapmode);
                 break;
-            case Component.MENU_MONTH:
+            case 48:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_mark);
+                break;
+            case 49:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_month);
                 break;
-            case Component.MENU_MORE:
+            case 50:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_more);
                 break;
-            case Component.MENU_MY_CALENDAR:
+            case 51:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_moreoverflow_focused_holo_dark);
+                break;
+            case 52:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_moreoverflow_focused_holo_light);
+                break;
+            case 53:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_moreoverflow_normal_holo_dark);
+                break;
+            case 54:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_moreoverflow_normal_holo_light);
+                break;
+            case 55:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_moreoverflow);
+                break;
+            case 56:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_my_calendar);
                 break;
-            case Component.MENU_MYLOCATION:
+            case 57:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_mylocation);
                 break;
-            case Component.MENU_MYPLACES:
+            case 58:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_myplaces);
                 break;
-            case Component.MENU_PREFERENCES:
+            case 59:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_notifications);
+                break;
+            case 60:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_paste_holo_dark);
+                break;
+            case 61:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_paste_holo_light);
+                break;
+            case 62:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_paste);
+                break;
+            case 63:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_play_clip);
+                break;
+            case 64:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_preferences);
                 break;
-            case Component.MENU_RECENT_HISTORY:
+            case 65:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_recent_history);
                 break;
-            case Component.MENU_REPORT_IMAGE:
+            case 66:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_refresh);
+                break;
+            case 67:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_report_image);
                 break;
-            case Component.MENU_REVERT:
+            case 68:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_revert);
                 break;
-            case Component.MENU_ROTATE:
+            case 69:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_rotate);
                 break;
-            case Component.MENU_SAVE:
+            case 70:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_save);
                 break;
-            case Component.MENU_SEARCH:
+            case 71:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_search_holo_dark);
+                break;
+            case 72:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_search_holo_light);
+                break;
+            case 73:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_search);
                 break;
-            case Component.MENU_SEND:
+            case 74:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_selectall_holo_dark);
+                break;
+            case 75:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_selectall_holo_light);
+                break;
+            case 76:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_send);
                 break;
-            case Component.MENU_SET_AS:
+            case 77:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_set_as);
                 break;
-            case Component.MENU_SHARE:
+            case 78:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_settings_holo_light);
+                break;
+            case 79:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_share_holo_dark);
+                break;
+            case 80:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_share_holo_light);
+                break;
+            case 81:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_share);
                 break;
-            case Component.MENU_SLIDESHOW:
+            case 82:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_slideshow);
                 break;
-            case Component.MENU_SORT_ALPHABETICALLY:
+            case 83:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_sort_alphabetically);
                 break;
-            case Component.MENU_SORT_BY_SIZE:
+            case 84:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_sort_by_size);
                 break;
-            case Component.MENU_TODAY:
+            case 85:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_star);
+                break;
+            case 86:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_start_conversation);
+                break;
+            case 87:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_stop);
+                break;
+            case 88:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_today);
                 break;
-            case Component.MENU_UPLOAD:
+            case 89:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_upload);
                 break;
-            case Component.MENU_UPLOAD_YOU_TUBE:
+            case 90:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_upload_you_tube);
                 break;
-            case Component.MENU_VIEW:
+            case 91:
+                menuItemIcon.setIconValue(android.R.drawable.ic_menu_upload_you_tube);
+                break;
+            case 92:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_view);
                 break;
-            case Component.MENU_WEEK:
+            case 93:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_week);
                 break;
-            case Component.MENU_ZOOM:
+            case 94:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_zoom);
                 break;
         }
