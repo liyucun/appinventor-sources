@@ -285,15 +285,12 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_upload_you_tube);
                 break;
             case 39:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_upload_you_tube);
-                break;
-            case 40:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_view);
                 break;
-            case 41:
+            case 40:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_week);
                 break;
-            case 42:
+            case 41:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_zoom);
                 break;
         }
