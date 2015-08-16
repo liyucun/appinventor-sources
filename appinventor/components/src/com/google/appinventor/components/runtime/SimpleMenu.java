@@ -171,285 +171,129 @@ public final class SimpleMenu extends AndroidNonvisibleComponent implements OnPr
                 menuItemIcon.setIconValue(NO_MENU_ICON);
                 break;
             case 1:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_account_list);
-                break;
-            case 2:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_add);
                 break;
-            case 3:
+            case 2:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_agenda);
                 break;
-            case 4:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_allfriends);
-                break;
-            case 5:
+            case 3:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_always_landscape_portrait);
                 break;
-            case 6:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_archive);
-                break;
-            case 7:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_attachment);
-                break;
-            case 8:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_back);
-                break;
-            case 9:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_block);
-                break;
-            case 10:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_blocked_user);
-                break;
-            case 11:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_btn_add);
-                break;
-            case 12:
+            case 4:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_call);
                 break;
-            case 13:
+            case 5:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_camera);
                 break;
-            case 14:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_cc);
-                break;
-            case 15:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_chat_dashboard);
-                break;
-            case 16:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_clear_playlist);
-                break;
-            case 17:
+            case 6:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_close_clear_cancel);
                 break;
-            case 18:
+            case 7:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_compass);
                 break;
-            case 19:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_compose);
-                break;
-            case 20:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_copy_holo_dark);
-                break;
-            case 21:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_copy_holo_light);
-                break;
-            case 22:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_copy);
-                break;
-            case 23:
+            case 8:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_crop);
                 break;
-            case 24:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_cut_holo_dark);
-                break;
-            case 25:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_cut_holo_light);
-                break;
-            case 26:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_cut);
-                break;
-            case 27:
+            case 9:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_day);
                 break;
-            case 28:
+            case 10:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_delete);
                 break;
-            case 29:
+            case 11:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_directions);
                 break;
-            case 30:
+            case 12:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_edit);
                 break;
-            case 31:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_emoticons);
-                break;
-            case 32:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_end_conversation);
-                break;
-            case 33:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_find_holo_dark);
-                break;
-            case 34:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_find_holo_light);
-                break;
-            case 35:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_find);
-                break;
-            case 36:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_forward);
-                break;
-            case 37:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_friendslist);
-                break;
-            case 38:
+            case 13:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_gallery);
                 break;
-            case 39:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_goto);
-                break;
-            case 40:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_help_holo_light);
-                break;
-            case 41:
+            case 14:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_help);
                 break;
-            case 42:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_home);
-                break;
-            case 43:
+            case 15:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_info_details);
                 break;
-            case 44:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_invite);
-                break;
-            case 45:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_login);
-                break;
-            case 46:
+            case 16:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_manage);
                 break;
-            case 47:
+            case 17:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_mapmode);
                 break;
-            case 48:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_mark);
-                break;
-            case 49:
+            case 18:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_month);
                 break;
-            case 50:
+            case 19:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_more);
                 break;
-            case 51:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_moreoverflow_focused_holo_dark);
-                break;
-            case 52:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_moreoverflow_focused_holo_light);
-                break;
-            case 53:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_moreoverflow_normal_holo_dark);
-                break;
-            case 54:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_moreoverflow_normal_holo_light);
-                break;
-            case 55:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_moreoverflow);
-                break;
-            case 56:
+            case 20:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_my_calendar);
                 break;
-            case 57:
+            case 21:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_mylocation);
                 break;
-            case 58:
+            case 22:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_myplaces);
                 break;
-            case 59:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_notifications);
-                break;
-            case 60:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_paste_holo_dark);
-                break;
-            case 61:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_paste_holo_light);
-                break;
-            case 62:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_paste);
-                break;
-            case 63:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_play_clip);
-                break;
-            case 64:
+            case 23:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_preferences);
                 break;
-            case 65:
+            case 24:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_recent_history);
                 break;
-            case 66:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_refresh);
-                break;
-            case 67:
+            case 25:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_report_image);
                 break;
-            case 68:
+            case 26:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_revert);
                 break;
-            case 69:
+            case 27:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_rotate);
                 break;
-            case 70:
+            case 28:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_save);
                 break;
-            case 71:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_search_holo_dark);
-                break;
-            case 72:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_search_holo_light);
-                break;
-            case 73:
+            case 29:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_search);
                 break;
-            case 74:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_selectall_holo_dark);
-                break;
-            case 75:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_selectall_holo_light);
-                break;
-            case 76:
+            case 30:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_send);
                 break;
-            case 77:
+            case 31:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_set_as);
                 break;
-            case 78:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_settings_holo_light);
-                break;
-            case 79:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_share_holo_dark);
-                break;
-            case 80:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_share_holo_light);
-                break;
-            case 81:
+            case 32:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_share);
                 break;
-            case 82:
+            case 33:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_slideshow);
                 break;
-            case 83:
+            case 34:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_sort_alphabetically);
                 break;
-            case 84:
+            case 35:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_sort_by_size);
                 break;
-            case 85:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_star);
-                break;
-            case 86:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_start_conversation);
-                break;
-            case 87:
-                menuItemIcon.setIconValue(android.R.drawable.ic_menu_stop);
-                break;
-            case 88:
+            case 36:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_today);
                 break;
-            case 89:
+            case 37:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_upload);
                 break;
-            case 90:
+            case 38:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_upload_you_tube);
                 break;
-            case 91:
+            case 39:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_upload_you_tube);
                 break;
-            case 92:
+            case 40:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_view);
                 break;
-            case 93:
+            case 41:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_week);
                 break;
-            case 94:
+            case 42:
                 menuItemIcon.setIconValue(android.R.drawable.ic_menu_zoom);
                 break;
         }
